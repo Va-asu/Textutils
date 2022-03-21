@@ -10,6 +10,16 @@
 
 # production
 /build
+/src/components/About1.js
+/src/components/About0.js
+/src/components/Navbar0.js
+/src/App0.js
+/src/App1.js
+/src/module1.mjs
+/src/module2.mjs
+
+
+
 
 # misc
 .DS_Store
