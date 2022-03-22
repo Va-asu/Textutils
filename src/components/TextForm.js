@@ -66,8 +66,8 @@ export default function TextForm(props) {
         </div>
         <div className={`container text-${props.mode==="light"?"grey":"light"}`}>
           <h2>Your text summary</h2>
-          <p>{text.split(" ").length} words and {text.length} characters </p>
-          <p>{0.008*text.split(" ").length}</p>
+          <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters </p>
+          <p>{0.008*text.split(" ").filter((element)=>{return element.length!==0}).length}</p>
           <h3>preview</h3>
           <p>{text}</p>
         </div>
@@ -92,3 +92,5 @@ abbrevation used:-
    1.button.btn.btn-primary
    2.div.container 
 ***/
+
+// .filter method will only allow those element whose satisfy the criteria
