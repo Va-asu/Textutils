@@ -11,7 +11,6 @@ import {
 
 function App() {
    const [mode,setMode]=useState("light");
-   const [txt,settxt]=useState("Enable dark mode");
    const[alert,setAlert]=useState(null);//now alert is an object 
 
    const showAlert=(message,type)=>{
@@ -42,12 +41,10 @@ function App() {
        if(mode==='light')
        {
           setMode('dark');
-          settxt('Enable light mode');
           document.body.style.backgroundColor="#031632";
           showAlert("dark mode enabled","success");
        }else{
           setMode('light');
-          settxt('Enable dark mode');
           document.body.style.backgroundColor="white";
           showAlert("light mode enabled","success");
   
@@ -57,7 +54,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title="Textutils" about="about textutils" mode={mode} toggleMode={toggleMode}  txt={txt} />
+        <Navbar title="Textutils" about="about textutils" mode={mode} toggleMode={toggleMode}   />
         <Alert alert={alert} />
         <Switch>
           <Route path="/about">

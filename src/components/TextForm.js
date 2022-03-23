@@ -44,9 +44,7 @@ export default function TextForm(props) {
     }
 
    const handleCopy=()=>{
-      let txt=document.getElementById("myBox");//it will get textarea element
-      txt.select();
-      navigator.clipboard.writeText(txt.value); 
+      navigator.clipboard.writeText(text); 
       props.showAlert("Copied text","success");
 
    }
@@ -66,7 +64,7 @@ export default function TextForm(props) {
         </div>
         <div className={`container text-${props.mode==="light"?"grey":"light"}`}>
           <h2>Your text summary</h2>
-          <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters </p>
+          <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters </p>
           <p>{0.008*text.split(" ").filter((element)=>{return element.length!==0}).length}</p>
           <h3>preview</h3>
           <p>{text}</p>
